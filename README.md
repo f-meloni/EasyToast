@@ -22,7 +22,7 @@ pod "EasyToast"
 
 ## Author
 
-Franco Meloni, franco.meloni@xorovo.com
+Franco Meloni, franco.meloni91@gmail.com
 
 ## License
 
