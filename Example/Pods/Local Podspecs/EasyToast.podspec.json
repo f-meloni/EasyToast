@@ -1,0 +1,22 @@
+{
+  "name": "EasyToast",
+  "version": "0.1.0",
+  "summary": "A short description of EasyToast.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/EasyToast",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Franco Meloni": "franco.meloni@xorovo.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/EasyToast.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "EasyToast/Classes/**/*"
+}

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EasyToast_Example' do
+  pod 'EasyToast', :path => '../'
+
+  target 'EasyToast_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

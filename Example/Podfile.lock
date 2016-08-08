@@ -1,0 +1,16 @@
+PODS:
+  - EasyToast (0.1.0)
+
+DEPENDENCIES:
+  - EasyToast (from `../`)
+
+EXTERNAL SOURCES:
+  EasyToast:
+    :path: ../
+
+SPEC CHECKSUMS:
+  EasyToast: 98c2509a38cf17f616d0c217ce3389b5e350ef40
+
+PODFILE CHECKSUM: 5d47c58dbe7d769f52341ba730c66631d0898349
+
+COCOAPODS: 1.0.1

@@ -1,0 +1,6 @@
+framework module Pods_EasyToast_Example {
+  umbrella header "Pods-EasyToast_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
