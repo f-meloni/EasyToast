@@ -1,9 +1,12 @@
 # EasyToast
 
+![Swift 2.0](https://img.shields.io/badge/Swift-2.2-orange.svg)
 [![CI Status](http://img.shields.io/travis/Franco Meloni/EasyToast.svg?style=flat)](https://travis-ci.org/Franco Meloni/EasyToast)
 [![Version](https://img.shields.io/cocoapods/v/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 [![License](https://img.shields.io/cocoapods/l/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 [![Platform](https://img.shields.io/cocoapods/p/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
+
+Android-like toast with simple interface, that uses a toast queue to handle multiple toast show requests and that allows to push or present a ViewControllers without disappear 
 
 ## Example
 
@@ -18,6 +21,32 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod "EasyToast"
+```
+
+
+## Show Toasts
+
+```swift
+self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: false)
+self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true)
+```
+
+### Personalize toasts
+
+```swift
+self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: false, bgColor: UIColor.blackColor(), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
+self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true, bgColor: UIColor.redColor(), textColor: UIColor.blackColor(), font: UIFont.boldSystemFontOfSize(19))
+```
+
+### Personalize all toasts in view
+
+```swift
+self.view.toastBackgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
+self.view.toastTextColor = UIColor.redColor()
+self.view.toastFont = UIFont.boldSystemFontOfSize(19)
+
+self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: false)
+self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true)
 ```
 
 ## Author

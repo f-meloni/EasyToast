@@ -50,8 +50,10 @@ class ViewController: UIViewController {
     
     func showToast() {
         self.view.toastBackgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
+        self.view.toastTextColor = UIColor.redColor()
+        self.view.toastFont = UIFont.boldSystemFontOfSize(19)
         
-        self.view.showToast("Prova di toast", position: .Bottom, popTime: 5, dismissOnTap: false, bgColor: UIColor.blackColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
+        self.view.showToast("Prova di toast", position: .Bottom, popTime: 5, dismissOnTap: false)
         self.view.showToast("Prova di toast2", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true, bgColor: UIColor.blackColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
         self.view.showToast("Prova di toast3", position: .Bottom, popTime: 5, dismissOnTap: false, bgColor: UIColor.blackColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
     }
