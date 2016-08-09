@@ -66,8 +66,8 @@ class ToastWindow: UIWindow {
                 self.textColor = toastTextColor
             }
             
-            if let toastFont = toast?.font {
-                self.toastFont = toastFont
+            if let font = toast?.font {
+                self.font = font
             }
         }
     }
