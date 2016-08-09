@@ -26,6 +26,8 @@ pod "EasyToast"
 
 ## Show Toasts
 
+### Show default toasts
+
 ```swift
 self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: false)
 self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true)
