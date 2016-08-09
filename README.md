@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/cocoapods/l/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 [![Platform](https://img.shields.io/cocoapods/p/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 
-Android-like toast with simple interface, that uses a toast queue to handle multiple toast show requests and that allows to push or present a ViewControllers without disappear 
+Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear 
 
 ## Example
 

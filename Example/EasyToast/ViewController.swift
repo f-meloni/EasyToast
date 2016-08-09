@@ -15,9 +15,9 @@ class ViewController: UIViewController {
         
         button.frame = CGRectMake(100, 100, 100, 100)
         
+        button.setTitle("Send Toasts", forState: .Normal)
+        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         button.backgroundColor = UIColor.blueColor()
-        button.titleLabel?.text = "Toast"
-        button.titleLabel?.textColor = UIColor.whiteColor()
         button.addTarget(self, action: #selector(showToast), forControlEvents: .TouchUpInside)
         
         return button
@@ -50,11 +50,11 @@ class ViewController: UIViewController {
     
     func showToast() {
         self.view.toastBackgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
-        self.view.toastTextColor = UIColor.redColor()
+        self.view.toastTextColor = UIColor.whiteColor()
         self.view.toastFont = UIFont.boldSystemFontOfSize(19)
         
         self.view.showToast("Prova di toast", position: .Bottom, popTime: 5, dismissOnTap: false)
-        self.view.showToast("Prova di toast2", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true, bgColor: UIColor.blackColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
+        self.view.showToast("Prova di toast2", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true, bgColor: UIColor.redColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(19))
         self.view.showToast("Prova di toast3", position: .Bottom, popTime: 5, dismissOnTap: false, bgColor: UIColor.blackColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
     }
     
