@@ -106,6 +106,8 @@ class ToastWindow: UIWindow {
     
     var onToastDimissed: ((toast: ToastWindow) -> ())?
     
+    private var tapGestureRecognizer: UITapGestureRecognizer?
+    
     private func commonInit() {
         self.opaque = false
         self.backgroundColor = UIColor.clearColor()
@@ -115,9 +117,8 @@ class ToastWindow: UIWindow {
         self.toastView.addSubview(self.textLabel)
         self.userInteractionEnabled = false
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(windowTapped))
-        
-        self.addGestureRecognizer(tapRecognizer)
+        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(windowTapped))
+        self.addGestureRecognizer(self.tapGestureRecognizer!)
     }
     
     override init(frame: CGRect) {
@@ -163,6 +164,8 @@ class ToastWindow: UIWindow {
                 self?.toastView.frame = self?.toastStartPosition() ?? CGRectZero
             }) { (success) in
                 self?.hidden = true
+                self?.oldWindow?.makeKeyAndVisible()
+                self?.resignKeyWindow()
                 
                 if let onToastDimissed = self?.onToastDimissed {
                     onToastDimissed(toast: self ?? ToastWindow())
@@ -174,6 +177,7 @@ class ToastWindow: UIWindow {
     //MARK: Actions
     
     func windowTapped() {
+        self.userInteractionEnabled = false
         self.dismiss()
     }
     

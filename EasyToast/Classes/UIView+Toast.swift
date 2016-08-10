@@ -16,6 +16,7 @@ public extension UIView {
         static var toastFont = "toastFont"
         static var toastDuration = "toastDuration"
         static var toastQueue = "toastQueue"
+        static var toastTimer = "toastTimer"
         static var hasDiplayedToast = "hasDiplayedToast"
     }
     
@@ -60,6 +61,9 @@ public extension UIView {
                 dispatch_sync(lockQueue) {
                     let toast = toastWindow.toast
                     
+                    self.toastTimer?.invalidate()
+                    
+                    self.toastTimer = nil
                     self.toastWindow = nil
                     
                     self.toastQueue = self.toastQueue.filter() { $0 !== toast } ?? []
@@ -80,10 +84,7 @@ public extension UIView {
             self.toastWindow?.show()
             
             if (toast.popTime ?? kToastNoPopupTime) != kToastNoPopupTime {
-                let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(popTime * NSEC_PER_SEC));
-                dispatch_after(popTime, dispatch_get_main_queue(), {
-                    self.toastWindow?.dismiss()
-                })
+                self.toastTimer = NSTimer.scheduledTimerWithTimeInterval(Double(popTime), target: self, selector: #selector(dismissToast), userInfo: nil, repeats: false)
             }
         }
     }
@@ -112,6 +113,18 @@ public extension UIView {
         }
         set(value) {
             objc_setAssociatedObject(self,&AssociatedKeys.toastQueue,value,objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    private class var toastTimer: NSTimer? {
+        get {
+            guard let toastTimer = objc_getAssociatedObject(self, &AssociatedKeys.toastTimer) as? NSTimer else {
+                return nil
+            }
+            return toastTimer
+        }
+        set(value) {
+            objc_setAssociatedObject(self,&AssociatedKeys.toastTimer,value,objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -161,5 +174,11 @@ public extension UIView {
         set(value) {
             objc_setAssociatedObject(self,&AssociatedKeys.toastFont,value,objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
+    }
+    
+    //MARK: Dismiss Toast
+    
+    class func dismissToast() {
+        self.toastWindow?.dismiss()
     }
 }
