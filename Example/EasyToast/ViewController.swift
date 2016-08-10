@@ -13,11 +13,9 @@ class ViewController: UIViewController {
     private lazy var button : UIButton = {
         let button = UIButton(type: .System)
         
-        button.frame = CGRectMake(100, 100, 100, 100)
-        
+        button.frame = CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 50)
+        button.titleLabel?.font = UIFont.systemFontOfSize(21)
         button.setTitle("Send Toasts", forState: .Normal)
-        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        button.backgroundColor = UIColor.blueColor()
         button.addTarget(self, action: #selector(showToast), forControlEvents: .TouchUpInside)
         
         return button
@@ -26,11 +24,9 @@ class ViewController: UIViewController {
     private lazy var button2 : UIButton = {
         let button = UIButton(type: .System)
         
-        button.frame = CGRectMake(200, 100, 100, 100)
-        
-        button.backgroundColor = UIColor.greenColor()
-        button.titleLabel?.text = "Toast"
-        button.titleLabel?.textColor = UIColor.whiteColor()
+        button.frame = CGRectMake(0, 80, CGRectGetWidth(self.view.frame), 50)
+        button.titleLabel?.font = UIFont.systemFontOfSize(21)
+        button.setTitle("Present Modal", forState: .Normal)
         button.addTarget(self, action: #selector(pushTestVC), forControlEvents: .TouchUpInside)
         
         return button
@@ -53,14 +49,29 @@ class ViewController: UIViewController {
         self.view.toastTextColor = UIColor.whiteColor()
         self.view.toastFont = UIFont.boldSystemFontOfSize(19)
         
-        self.view.showToast("Prova di toast", position: .Bottom, popTime: 5, dismissOnTap: false)
-        self.view.showToast("Prova di toast2", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true, bgColor: UIColor.redColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(19))
-        self.view.showToast("Prova di toast3", position: .Bottom, popTime: 5, dismissOnTap: false, bgColor: UIColor.blackColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
+        self.view.showToast("Toast", position: .Bottom, popTime: 2, dismissOnTap: false)
+        self.view.showToast("Dismiss on tap toast", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true, bgColor: UIColor.redColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(19))
+        self.view.showToast("Long Text Toast:\n" +
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae elit non leo pellentesque feugiat. Cras nec volutpat massa, nec blandit nisi. Etiam ut hendrerit purus. Morbi accumsan, risus ut cursus finibus, quam ipsum egestas nisl, vel hendrerit massa justo nec metus. Cras pulvinar, leo eu pulvinar convallis, tellus felis laoreet massa, ac tincidunt orci massa non odio. Ut pulvinar dictum metus quis mollis. Aenean tincidunt sit amet turpis sed egestas. Morbi porta dolor neque, ut pellentesque urna semper id. Cras rhoncus consequat justo. Cras dictum enim orci, ac vestibulum enim cursus id.",
+                            position: .Bottom,
+                            popTime: 5,
+                            dismissOnTap: true,
+                            bgColor: UIColor.redColor().colorWithAlphaComponent(0.7),
+                            textColor: UIColor.whiteColor(),
+                            font: UIFont.systemFontOfSize(19))
     }
     
     func pushTestVC() {
-        self.presentViewController(TestVCViewController(), animated: true, completion: nil)
+        let vc = TestVCViewController()
+        let navigationVC = UINavigationController(rootViewController: vc)
+        
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: #selector(closeModal))
+        
+        self.presentViewController(navigationVC, animated: true, completion: nil)
     }
 
+    func closeModal() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 

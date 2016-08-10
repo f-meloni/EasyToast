@@ -13,7 +13,7 @@ class TestVCViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.yellowColor()
+        self.view.backgroundColor = UIColor.whiteColor()
 
         self.modalPresentationStyle = .FormSheet
         
