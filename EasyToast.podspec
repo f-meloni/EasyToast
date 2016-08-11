@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasyToast'
-  s.version          = '0.1.0'
+  s.version          = '0.8.1'
   s.summary          = 'A short description of EasyToast.'
 
 # This description is used to generate tags and improve search results.
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/EasyToast'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/f-meloni/EasyToast'
+  s.screenshots     = 'https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.jpg'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Franco Meloni' => 'franco.meloni@xorovo.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/EasyToast.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/f-meloni/EasyToast.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
