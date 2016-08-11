@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'EasyToast'
   s.version          = '0.8.2'
-  s.summary          = 'A short description of EasyToast.'
+  s.summary          = 'Swift Android like toasts'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear
+Swift Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear
                        DESC
 
   s.homepage         = 'https://github.com/f-meloni/EasyToast'
