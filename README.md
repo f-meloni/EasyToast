@@ -51,6 +51,10 @@ self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: f
 self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true)
 ```
 
+## Screenshots
+
+![EasyToast Screenshot](https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.png)
+
 ## Author
 
 Franco Meloni, franco.meloni91@gmail.com
