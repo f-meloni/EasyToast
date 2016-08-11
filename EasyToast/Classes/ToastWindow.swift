@@ -157,7 +157,7 @@ class ToastWindow: UIWindow {
     }
     
     
-    public func dismiss() {
+    func dismiss() {
         let lockQueue = dispatch_queue_create("easyToast.toast.dismissQueue", nil)
         dispatch_sync(lockQueue) { [weak self] in
             UIView.animateWithDuration(0.6, animations: {
@@ -184,7 +184,7 @@ class ToastWindow: UIWindow {
     //MARK: Private
     
     private func textSize() -> CGSize {
-        var size = self.textLabel.sizeThatFits(CGSizeMake(kMaxToastWidth, CGFloat.max))
+        let size = self.textLabel.sizeThatFits(CGSizeMake(kMaxToastWidth, CGFloat.max))
         
         return size
     }

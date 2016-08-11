@@ -37,7 +37,7 @@ public extension UIView {
         
         if font == nil {
             if let font = self.toastFont {
-                queueToast.font = self.toastFont
+                queueToast.font = font
             }
         }
         
