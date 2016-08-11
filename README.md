@@ -53,7 +53,7 @@ self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime,
 
 ## Screenshots
 
-![EasyToast Screenshot](https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.png)
+![EasyToast Screenshot](https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.jpg)
 
 ## Author
 
