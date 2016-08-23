@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasyToast'
-  s.version          = '0.8.3'
+  s.version          = '0.8.4'
   s.summary          = 'Swift Android like toasts'
 
 # This description is used to generate tags and improve search results.
@@ -22,7 +22,7 @@ Swift Android-like toast with simple interface, using a toast queue to handle mu
                        DESC
 
   s.homepage         = 'https://github.com/f-meloni/EasyToast'
-  s.screenshots     = 'https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.jpg'
+  s.screenshots      = 'https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.jpg'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Franco Meloni' => 'franco.meloni@xorovo.com' }
   s.source           = { :git => 'https://github.com/f-meloni/EasyToast.git', :tag => s.version.to_s }
