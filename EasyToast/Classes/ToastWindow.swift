@@ -160,7 +160,7 @@ class ToastWindow: UIWindow {
     func dismiss() {
         let lockQueue = dispatch_queue_create("easyToast.toast.dismissQueue", nil)
         dispatch_sync(lockQueue) { [weak self] in
-            UIView.animateWithDuration(0.6, animations: {
+            UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.07, options: .TransitionNone, animations: {
                 self?.toastView.frame = self?.toastStartPosition() ?? CGRectZero
             }) { (success) in
                 self?.hidden = true
