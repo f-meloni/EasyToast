@@ -8,6 +8,13 @@
 
 import UIKit
 
+/**
+ Toast screen position
+ 
+ - Bottom: The toast will be shown on the bottom of the screen
+ - Top: The toast will be shown on the top of the screen
+*/
+
 public enum ToastPosition {
     case Bottom
     case Top

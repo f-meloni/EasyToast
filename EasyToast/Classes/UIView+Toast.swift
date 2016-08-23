@@ -20,6 +20,18 @@ public extension UIView {
         static var hasDiplayedToast = "hasDiplayedToast"
     }
     
+    /**
+        Shows toast on view
+        
+        - Parameters:
+            - message: Message to show
+            - position: Toast screen position
+            - popTime: Time before toast pop
+            - dismissOnTap: Defines if toast will be dismissed with tap
+            - bgColor: Toast background color
+            - textColor: Toast Text Color
+            - font: Toast font
+    */
     public func showToast(message: String, position: ToastPosition, popTime: UInt64?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
         let queueToast = QueueToast(message: message, position: position, popTime: popTime, dismissOnTap: dismissOnTap, bgColor: bgColor, textColor: textColor, font: font)
         
@@ -90,7 +102,7 @@ public extension UIView {
     }
     
     
-    //MARK: Getters and Setters
+    //MARK: Class Getters and Setters
     
     private class var hasDiplayedToast: Bool {
         get {
@@ -140,6 +152,11 @@ public extension UIView {
         }
     }
     
+    //MARK: Getters and Setters
+    
+    /** 
+    View toasts default background color
+    */
     public var toastBackgroundColor : UIColor? {
         get {
             guard let toastBackgroundColor = objc_getAssociatedObject(self, &AssociatedKeys.toastBackgroundColor) as? UIColor else {
@@ -152,6 +169,9 @@ public extension UIView {
         }
     }
     
+    /**
+    View toasts default text color
+    */
     public var toastTextColor : UIColor? {
         get {
             guard let toastTextColor = objc_getAssociatedObject(self, &AssociatedKeys.toastTextColor) as? UIColor else {
@@ -164,6 +184,9 @@ public extension UIView {
         }
     }
     
+    /**
+    View toasts default font
+    */
     public var toastFont: UIFont? {
         get {
             guard let toastFont = objc_getAssociatedObject(self, &AssociatedKeys.toastFont) as? UIFont else {
