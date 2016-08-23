@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         
         self.view.addSubview(self.button)
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.button.frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 50)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
