@@ -11,8 +11,6 @@ Android-like toast with simple interface, using a toast queue to handle multiple
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 EasyToast is available through [CocoaPods](http://cocoapods.org). To install
@@ -21,7 +19,6 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "EasyToast"
 ```
-
 
 ## Show Toasts
 
