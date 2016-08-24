@@ -64,7 +64,7 @@ public extension UIView {
                 return
             }
             
-            let popTime = toast.popTime ?? kToastNoPopupTime
+            let popTime = toast.popTime ?? kToastNoPopTime
             
             self.toastWindow = ToastWindow(frame: UIScreen.mainScreen().bounds)
             self.toastWindow?.toast = toast
@@ -95,7 +95,7 @@ public extension UIView {
             
             self.toastWindow?.show()
             
-            if (toast.popTime ?? kToastNoPopupTime) != kToastNoPopupTime {
+            if popTime != kToastNoPopTime {
                 self.toastTimer = NSTimer.scheduledTimerWithTimeInterval(Double(popTime), target: self, selector: #selector(dismissToast), userInfo: nil, repeats: false)
             }
         }

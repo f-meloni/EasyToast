@@ -29,14 +29,14 @@ pod "EasyToast"
 
 ```swift
 self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: false)
-self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true)
+self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: true)
 ```
 
 ### Personalize toasts
 
 ```swift
 self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: false, bgColor: UIColor.blackColor(), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(19))
-self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true, bgColor: UIColor.redColor(), textColor: UIColor.blackColor(), font: UIFont.boldSystemFontOfSize(19))
+self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: true, bgColor: UIColor.redColor(), textColor: UIColor.blackColor(), font: UIFont.boldSystemFontOfSize(19))
 ```
 
 ### Personalize all toasts in view
@@ -47,7 +47,7 @@ self.view.toastTextColor = UIColor.redColor()
 self.view.toastFont = UIFont.boldSystemFontOfSize(19)
 
 self.view.showToast("Toast Text", position: .Bottom, popTime: 5, dismissOnTap: false)
-self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopupTime, dismissOnTap: true)
+self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: true)
 ```
 
 ## Screenshots

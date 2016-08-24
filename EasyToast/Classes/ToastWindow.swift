@@ -24,7 +24,7 @@ private let kMaxToastWidth: CGFloat = UIDevice.currentDevice().userInterfaceIdio
 private let kPadding: CGFloat = 10
 private let kToastDistance: CGFloat = 100
 
-public let kToastNoPopupTime : UInt64 = 0
+public let kToastNoPopTime : UInt64 = 0
 
 class ToastWindow: UIWindow {
     private lazy var textLabel: UILabel = {
@@ -59,11 +59,11 @@ class ToastWindow: UIWindow {
     
     var toast: QueueToast? {
         didSet {
-            let popTime = toast?.popTime ?? kToastNoPopupTime
+            let popTime = toast?.popTime ?? kToastNoPopTime
             
             self.text = toast?.message
             self.toastPosition = toast?.position ?? .Bottom
-            self.dismissOnTap = popTime == kToastNoPopupTime ? true : toast?.dismissOnTap ?? false
+            self.dismissOnTap = popTime == kToastNoPopTime ? true : toast?.dismissOnTap ?? false
             
             if let toastBackgroundColor = toast?.bgColor  {
                 self.toastBgColor = toastBackgroundColor
