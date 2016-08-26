@@ -82,9 +82,6 @@ public extension UIView {
                     
                     self.hasDiplayedToast = false
                     
-                    print(toast)
-                    print(toastQueue)
-                    
                     if let queueToast = self.toastQueue.first {
                         self.showToast(queueToast)
                     }
