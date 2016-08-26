@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		443DD03E1D54C9DF0024FA13 /* TestVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DD03D1D54C9DF0024FA13 /* TestVCViewController.swift */; };
 		497445F21F535AFE0FB61E0D /* Pods_EasyToast_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6977D60010F88458C8826F71 /* Pods_EasyToast_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -31,7 +30,6 @@
 /* Begin PBXFileReference section */
 		241A22BF408DFA8687C585E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		31827073FEA8F2F1AA62329E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		443DD03D1D54C9DF0024FA13 /* TestVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVCViewController.swift; sourceTree = "<group>"; };
 		511179989FAD813E07A720BA /* Pods-EasyToast_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyToast_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyToast_Example/Pods-EasyToast_Example.release.xcconfig"; sourceTree = "<group>"; };
 		59019FB9F651BD03D9117D30 /* EasyToast.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EasyToast.podspec; path = ../EasyToast.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EasyToast_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyToast_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +106,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				443DD03D1D54C9DF0024FA13 /* TestVCViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -364,7 +361,6 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				443DD03E1D54C9DF0024FA13 /* TestVCViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
