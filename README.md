@@ -13,7 +13,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-EasyToast is available through [CocoaPods](http://cocoapods.org). To install
+EasyToast is available throgugh [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
@@ -50,6 +50,7 @@ self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopTime, d
 ## Screenshots
 
 ![EasyToast Screenshot](https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.jpg)
+![EasyToast Gif Example](https://raw.github.com/f-meloni/EasyToast/master/GifExample/EasyToastExample.gif)
 
 ## Author
 
