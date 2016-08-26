@@ -13,6 +13,7 @@
 		0A750421F7B2979FC9AE22D73E6EFD3B /* QueueToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA37FAEFE144CC2907274BA7399F56C /* QueueToast.swift */; };
 		32AB024D0ED8F44A177F3D10395E5419 /* Pods-EasyToast_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A9DB02931CBB54BB69F0A03494E61E /* Pods-EasyToast_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A8CC74B0385663A73C821085CA2848E /* Pods-EasyToast_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE255DE5C86E85AE44068EB9875DF5 /* Pods-EasyToast_Example-dummy.m */; };
+		443EF92E1D7087F80053C571 /* ToastContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443EF92D1D7087F80053C571 /* ToastContainerVC.swift */; };
 		4602D895B3A0F20A7F0E7127DB137E73 /* Pods-EasyToast_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 92DC890700D56B24CFECD2CCC3A7BACE /* Pods-EasyToast_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D7399D3A79A794D2954C8BE16E7A04A /* Pods-EasyToast_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C127F7C70200345D4058B2150E895F /* Pods-EasyToast_Tests-dummy.m */; };
 		93E35BA601C21EF74D323C12EF8B966F /* EasyToast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D43871FFAEFF41B1BCD0A6B02F3289A /* EasyToast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +39,7 @@
 		24458BFA095C19CE1EE8E2094302A0E0 /* Pods-EasyToast_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EasyToast_Tests.modulemap"; sourceTree = "<group>"; };
 		26DACA33744715EB81B1660F8703BDBC /* EasyToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CAE255DE5C86E85AE44068EB9875DF5 /* Pods-EasyToast_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyToast_Example-dummy.m"; sourceTree = "<group>"; };
+		443EF92D1D7087F80053C571 /* ToastContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastContainerVC.swift; sourceTree = "<group>"; };
 		47FF4D7171381A6AA2E29A6E00A8CD6D /* Pods-EasyToast_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyToast_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5ADB65337C6ED426DDB48D4FAA4A29CB /* Pods-EasyToast_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyToast_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5AE8E9B2C9C15501B2C92FB57B47A7D3 /* Pods-EasyToast_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EasyToast_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				FBA37FAEFE144CC2907274BA7399F56C /* QueueToast.swift */,
 				D2F6811124CE33BB8ADB0D6543EC98B3 /* ToastWindow.swift */,
 				98F872E0D6BD65B3D547FC3F83D53F3C /* UIView+Toast.swift */,
+				443EF92D1D7087F80053C571 /* ToastContainerVC.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443EF92E1D7087F80053C571 /* ToastContainerVC.swift in Sources */,
 				05B2E79BB3B8FF67F99F6F875A042B93 /* EasyToast-dummy.m in Sources */,
 				0A750421F7B2979FC9AE22D73E6EFD3B /* QueueToast.swift in Sources */,
 				D0A9CBEDE27BAC1B3842BF28B95F6BE6 /* ToastWindow.swift in Sources */,
