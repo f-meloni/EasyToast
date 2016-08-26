@@ -52,7 +52,7 @@ self.view.showToast("Toast Text", position: .Bottom, popTime: kToastNoPopTime, d
 ![EasyToast Screenshot](https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.jpg)
 
 ## Example
-On button click will be execute this code
+On button click will be executed this code
 
 ```swift
 self.view.toastBackgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
