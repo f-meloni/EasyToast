@@ -48,9 +48,7 @@ class ToastWindow: UIWindow {
     
     private lazy var containerVC: UIViewController = {
         let containerVC = ToastContainerVC(nibName: nil, bundle: nil)
-        
         containerVC.view.addSubview(self.toastView)
-        containerVC.statusBarStyle = self.oldWindow?.rootViewController?.preferredStatusBarStyle()
         
         return containerVC
     }()

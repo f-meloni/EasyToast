@@ -9,15 +9,11 @@
 import UIKit
 
 class ToastContainerVC: UIViewController {
-    var statusBarStyle: UIStatusBarStyle?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return self.statusBarStyle ?? .Default
+        return UIApplication.sharedApplication().statusBarStyle
     }
 }
