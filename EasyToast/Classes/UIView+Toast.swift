@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Toast extension for UIView
+**/
 public extension UIView {
     private struct AssociatedKeys {
         static var toastWindow = "toastWindow"
@@ -198,6 +201,9 @@ public extension UIView {
     
     //MARK: Dismiss Toast
     
+    /**
+        Dismiss currently shown toast
+    */
     class func dismissToast() {
         self.toastWindow?.dismiss()
     }

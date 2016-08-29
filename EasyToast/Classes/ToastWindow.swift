@@ -11,12 +11,18 @@ import UIKit
 /**
  Toast screen position
  
- - Bottom: The toast will be shown on the bottom of the screen
- - Top: The toast will be shown on the top of the screen
+ - Bottom: Toast will be shown on the bottom of the screen
+ - Top: Toast will be shown on the top of the screen
 */
-
 public enum ToastPosition {
+    /**
+     Toast will be shown on the bottom of the screen
+    */
     case Bottom
+    
+    /**
+     Toast will be shown on the top of the screen
+    */
     case Top
 }
 
@@ -24,6 +30,9 @@ private let kMaxToastWidth: CGFloat = UIDevice.currentDevice().userInterfaceIdio
 private let kPadding: CGFloat = 10
 private let kToastDistance: CGFloat = 100
 
+/**
+ No pop time for toast
+ */
 public let kToastNoPopTime : UInt64 = 0
 
 class ToastWindow: UIWindow {

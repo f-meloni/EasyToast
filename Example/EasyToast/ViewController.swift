@@ -53,6 +53,7 @@ class ViewController: UIViewController {
                             bgColor: UIColor.redColor().colorWithAlphaComponent(0.7),
                             textColor: UIColor.whiteColor(),
                             font: UIFont.systemFontOfSize(19))
+        
     }
 
     func closeModal() {
