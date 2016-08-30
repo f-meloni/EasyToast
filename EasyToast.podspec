@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasyToast'
-  s.version          = '0.9.2'
+  s.version          = '0.9.3'
   s.summary          = 'Swift Android like toasts'
 
 # This description is used to generate tags and improve search results.
