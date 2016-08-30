@@ -7,7 +7,7 @@
 
 Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear 
 
-## Example
+## Example Project
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
