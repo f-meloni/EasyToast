@@ -62,7 +62,7 @@ public extension UIView {
     private class func showToast(toast: QueueToast) {
         let lockQueue = dispatch_queue_create("easyToast.toast.queue", nil)
         dispatch_sync(lockQueue) {
-            if hasDiplayedToast ?? false {
+            if hasDisplayedToast ?? false {
                 self.toastQueue.append(toast)
                 return
             }
@@ -83,7 +83,7 @@ public extension UIView {
                     
                     self.toastQueue = self.toastQueue.filter() { $0 !== toast } ?? []
                     
-                    self.hasDiplayedToast = false
+                    self.hasDisplayedToast = false
                     
                     if let queueToast = self.toastQueue.first {
                         self.showToast(queueToast)
@@ -91,7 +91,7 @@ public extension UIView {
                 }
             }
             
-            self.hasDiplayedToast = true
+            self.hasDisplayedToast = true
             
             self.toastWindow?.show()
             
@@ -104,7 +104,7 @@ public extension UIView {
     
     //MARK: Class Getters and Setters
     
-    private class var hasDiplayedToast: Bool {
+    private class var hasDisplayedToast: Bool {
         get {
             guard let toastQueue = objc_getAssociatedObject(self, &AssociatedKeys.hasDiplayedToast) as? Bool else {
                 return false
@@ -140,7 +140,7 @@ public extension UIView {
         }
     }
     
-    private class var toastWindow: ToastWindow? {
+    internal class var toastWindow: ToastWindow? {
         get {
             guard let toastWindow = objc_getAssociatedObject(self, &AssociatedKeys.toastWindow) as? ToastWindow else {
                 return nil
@@ -149,6 +149,15 @@ public extension UIView {
         }
         set(value) {
             objc_setAssociatedObject(self,&AssociatedKeys.toastWindow,value,objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    /**
+     Defines if there is already a displayed toast in view
+    */
+    public var hasDisplayedToast: Bool {
+        get {
+            return UIView.hasDisplayedToast
         }
     }
     
@@ -204,7 +213,14 @@ public extension UIView {
     /**
         Dismiss currently shown toast
     */
-    class func dismissToast() {
+    public func dismissToast() {
+        UIView.dismissToast()
+    }
+    
+    /**
+     Class method to dismiss currently shown toast
+    */
+    internal class func dismissToast() {
         self.toastWindow?.dismiss()
     }
 }
