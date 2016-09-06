@@ -69,6 +69,20 @@ self.view.showToast("Long Text Toast:\n" +
 
 ![EasyToast Gif Example](https://raw.github.com/f-meloni/EasyToast/master/GifExample/EasyToastExample.gif)
 
+## Toast tag
+
+To avoid multiple toasts with the same argument, e.g. if a user taps many times on the same button that shows a toast, you can tag it to prevent multiple toast displaying
+
+#### Example
+
+```swift
+view.showToast("Toast", tag:"test", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: false)
+view.showToast("Toast", tag:"test", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: false)
+view.showToast("Toast", tag:"test", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: false)
+```
+
+This code will show only the first toast
+
 ## Screenshots
 
 ![EasyToast Screenshot](https://raw.github.com/f-meloni/EasyToast/master/Screenshots/EasyToastScreenshots.jpg)

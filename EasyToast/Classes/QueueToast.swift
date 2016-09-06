@@ -10,6 +10,7 @@ import Foundation
 
 class QueueToast {
     var message: String
+    var tag: String?
     var position: ToastPosition
     var popTime: UInt64?
     var dismissOnTap: Bool
@@ -18,8 +19,9 @@ class QueueToast {
     var textColor: UIColor?
     var font: UIFont?
 
-    init(message: String, position: ToastPosition, popTime: UInt64?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
+    init(message: String, tag: String?, position: ToastPosition, popTime: UInt64?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
         self.message = message
+        self.tag = tag
         self.position = position
         self.popTime = popTime
         self.dismissOnTap = dismissOnTap

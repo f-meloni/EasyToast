@@ -28,6 +28,7 @@ public extension UIView {
         
         - Parameters:
             - message: Message to show
+            - tag: Toast tag to avoid multiple toasts with same tag
             - position: Toast screen position
             - popTime: Time before toast pop
             - dismissOnTap: Defines if toast will be dismissed with tap
@@ -35,8 +36,8 @@ public extension UIView {
             - textColor: Toast Text Color
             - font: Toast font
     */
-    public func showToast(message: String, position: ToastPosition, popTime: UInt64?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
-        let queueToast = QueueToast(message: message, position: position, popTime: popTime, dismissOnTap: dismissOnTap, bgColor: bgColor, textColor: textColor, font: font)
+    public func showToast(message: String, tag: String? = nil, position: ToastPosition, popTime: UInt64?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
+        let queueToast = QueueToast(message: message, tag: tag, position: position, popTime: popTime, dismissOnTap: dismissOnTap, bgColor: bgColor, textColor: textColor, font: font)
         
         if bgColor == nil {
             if let toastBackgroundColor = self.toastBackgroundColor {
@@ -63,7 +64,18 @@ public extension UIView {
         let lockQueue = dispatch_queue_create("easyToast.toast.queue", nil)
         dispatch_sync(lockQueue) {
             if hasDisplayedToast ?? false {
-                self.toastQueue.append(toast)
+                var appendToast = true
+                
+                if let toastTag = toast.tag {
+                    if self.toastQueue.contains({ queueToast in queueToast.tag == toastTag }) {
+                        appendToast = false
+                    }
+                }
+                
+                if appendToast {
+                    self.toastQueue.append(toast)
+                }
+                
                 return
             }
             
@@ -93,6 +105,8 @@ public extension UIView {
             
             self.hasDisplayedToast = true
             
+            self.toastQueue.append(toast)
+            
             self.toastWindow?.show()
             
             if popTime != kToastNoPopTime {
@@ -116,7 +130,7 @@ public extension UIView {
         }
     }
     
-    private class var toastQueue: [QueueToast] {
+    internal class var toastQueue: [QueueToast] {
         get {
             guard let toastQueue = objc_getAssociatedObject(self, &AssociatedKeys.toastQueue) as? [QueueToast] else {
                 return [QueueToast]()
