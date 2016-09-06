@@ -1,5 +1,8 @@
 #CHANGELOG
 
+##Version 1.00
+Added toasts tag, bugfix
+
 ##Version 0.9.3
 Added changelog
 
