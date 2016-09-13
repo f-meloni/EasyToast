@@ -1,6 +1,9 @@
 #CHANGELOG
 
-##Version 1.00
+##Version 1.0.1
+toast popTime now is a Double
+
+##Version 1.0.0
 Added toasts tag, bugfix
 
 ##Version 0.9.3
