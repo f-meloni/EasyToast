@@ -39,11 +39,11 @@ class ViewController: UIViewController {
     }
     
     func showToast() {
-        self.view.toastBackgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
+        self.view.toastBackgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
         self.view.toastTextColor = UIColor.whiteColor()
         self.view.toastFont = UIFont.boldSystemFontOfSize(19)
         
-        self.view.showToast("Toast", tag:"1", position: .Bottom, popTime: 2, dismissOnTap: false)
+        self.view.showToast("Toast", tag:"1", position: .Bottom, popTime: 0.6, dismissOnTap: false)
         self.view.showToast("Dismiss on tap toast", tag:"1", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: true, bgColor: UIColor.redColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(19))
         self.view.showToast("Long Text Toast:\n" +
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae elit non leo pellentesque feugiat. Cras nec volutpat massa, nec blandit nisi. Etiam ut hendrerit purus. Morbi accumsan, risus ut cursus finibus, quam ipsum egestas nisl, vel hendrerit massa justo nec metus. Cras pulvinar, leo eu pulvinar convallis, tellus felis laoreet massa, ac tincidunt orci massa non odio. Ut pulvinar dictum metus quis mollis. Aenean tincidunt sit amet turpis sed egestas. Morbi porta dolor neque, ut pellentesque urna semper id. Cras rhoncus consequat justo. Cras dictum enim orci, ac vestibulum enim cursus id.",

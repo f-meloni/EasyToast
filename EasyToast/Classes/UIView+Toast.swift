@@ -36,7 +36,7 @@ public extension UIView {
             - textColor: Toast Text Color
             - font: Toast font
     */
-    public func showToast(message: String, tag: String? = nil, position: ToastPosition, popTime: UInt64?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
+    public func showToast(message: String, tag: String? = nil, position: ToastPosition, popTime: Double?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
         let queueToast = QueueToast(message: message, tag: tag, position: position, popTime: popTime, dismissOnTap: dismissOnTap, bgColor: bgColor, textColor: textColor, font: font)
         
         if bgColor == nil {
@@ -110,7 +110,7 @@ public extension UIView {
             self.toastWindow?.show()
             
             if popTime != kToastNoPopTime {
-                self.toastTimer = NSTimer.scheduledTimerWithTimeInterval(Double(popTime), target: self, selector: #selector(dismissToast), userInfo: nil, repeats: false)
+                self.toastTimer = NSTimer.scheduledTimerWithTimeInterval(popTime, target: self, selector: #selector(dismissToast), userInfo: nil, repeats: false)
             }
         }
     }

@@ -12,14 +12,14 @@ class QueueToast {
     var message: String
     var tag: String?
     var position: ToastPosition
-    var popTime: UInt64?
+    var popTime: Double?
     var dismissOnTap: Bool
     var text: String?
     var bgColor: UIColor?
     var textColor: UIColor?
     var font: UIFont?
 
-    init(message: String, tag: String?, position: ToastPosition, popTime: UInt64?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
+    init(message: String, tag: String?, position: ToastPosition, popTime: Double?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
         self.message = message
         self.tag = tag
         self.position = position

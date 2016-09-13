@@ -33,7 +33,7 @@ private let kToastDistance: CGFloat = 100
 /**
  No pop time for toast
  */
-public let kToastNoPopTime : UInt64 = 0
+public let kToastNoPopTime : Double = 0
 
 class ToastWindow: UIWindow {
     private lazy var textLabel: UILabel = {
