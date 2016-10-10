@@ -1,7 +1,10 @@
 #CHANGELOG
 
+##Version 1.1.0
+Added toasts configuration
+
 ##Version 1.0.1
-toast popTime now is a Double
+Toast popTime now is a Double
 
 ##Version 1.0.0
 Added toasts tag, bugfix
