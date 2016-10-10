@@ -69,6 +69,15 @@ self.view.showToast("Long Text Toast:\n" +
 
 ![EasyToast Gif Example](https://raw.github.com/f-meloni/EasyToast/master/GifExample/EasyToastExample.gif)
 
+## Configure Toasts
+
+```swift
+EasyToastConfiguration.toastInnerPadding = 10
+EasyToastConfiguration.animationDuration = 0.6
+EasyToastConfiguration.initialSpringVelocity = 0.07
+EasyToastConfiguration.dampingRatio = 0.65
+```
+
 ## Toast tag
 
 To avoid multiple toasts with the same argument, e.g. if a user taps many times on the same button that shows a toast, you can tag it to prevent multiple toast displaying
