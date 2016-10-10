@@ -27,7 +27,7 @@ public enum ToastPosition {
 }
 
 private let kMaxToastWidth: CGFloat = UIDevice.currentDevice().userInterfaceIdiom == .Pad ? 500 : 300
-private let kPadding: CGFloat = 10
+
 private let kToastDistance: CGFloat = 100
 
 /**
@@ -37,7 +37,9 @@ public let kToastNoPopTime : Double = 0
 
 class ToastWindow: UIWindow {
     private lazy var textLabel: UILabel = {
-        let textLabel = UILabel(frame: CGRectMake(kPadding, kPadding, CGRectGetHeight(self.toastView.frame) - (kPadding * 2), CGRectGetWidth(self.toastView.frame) - (kPadding * 2)))
+        let padding = EasyToastConfiguration.toastInnerPadding
+        
+        let textLabel = UILabel(frame: CGRectMake(padding, padding, CGRectGetHeight(self.toastView.frame) - (padding * 2), CGRectGetWidth(self.toastView.frame) - (padding * 2)))
         textLabel.numberOfLines = 0
         textLabel.font = self.font
         textLabel.textColor = self.textColor
@@ -163,9 +165,11 @@ class ToastWindow: UIWindow {
         
         self.toastView.frame = self.toastStartPosition()
         
-        self.textLabel.frame = CGRectMake(kPadding, kPadding, CGRectGetWidth(self.toastView.frame) - (kPadding * 2), CGRectGetHeight(self.toastView.frame) - (kPadding * 2))
+        let padding = EasyToastConfiguration.toastInnerPadding
         
-        UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.07, options: .TransitionNone, animations: {
+        self.textLabel.frame = CGRectMake(padding, padding, CGRectGetWidth(self.toastView.frame) - (padding * 2), CGRectGetHeight(self.toastView.frame) - (padding * 2))
+        
+        UIView.animateWithDuration(EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: .TransitionNone, animations: {
             self.toastView.frame = self.toastEndPosition()
             }, completion: nil)
     }
@@ -174,7 +178,7 @@ class ToastWindow: UIWindow {
     func dismiss() {
         let lockQueue = dispatch_queue_create("easyToast.toast.dismissQueue", nil)
         dispatch_sync(lockQueue) { [weak self] in
-            UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.07, options: .TransitionNone, animations: {
+            UIView.animateWithDuration(EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: .TransitionNone, animations: {
                 self?.toastView.frame = self?.toastStartPosition() ?? CGRectZero
             }) { (success) in
                 self?.hidden = true
@@ -206,14 +210,16 @@ class ToastWindow: UIWindow {
     private func rectWithY(y: CGFloat) -> CGRect {
         let size = self.textSize()
         
-        let viewWidth = (size.width + kPadding * 2)
+        let padding = EasyToastConfiguration.toastInnerPadding
         
-        return CGRectMake((CGRectGetWidth(self.bounds) - viewWidth)/2, y, viewWidth, size.height +  kPadding * 2)
+        let viewWidth = (size.width + padding * 2)
+        
+        return CGRectMake((CGRectGetWidth(self.bounds) - viewWidth)/2, y, viewWidth, size.height +  padding * 2)
     }
     
     private func toastStartPosition() -> CGRect {
         if toastPosition == .Top {
-            return self.rectWithY(-self.textSize().height)
+            return self.rectWithY(-self.textSize().height - EasyToastConfiguration.toastInnerPadding * 2 - UIApplication.sharedApplication().statusBarFrame.size.height)
         }
         else {
             return self.rectWithY(CGRectGetHeight(self.bounds))
@@ -225,7 +231,7 @@ class ToastWindow: UIWindow {
             return self.rectWithY(kToastDistance)
         }
         else {
-            return self.rectWithY(CGRectGetHeight(self.bounds) - kToastDistance - self.textSize().height)
+            return self.rectWithY(CGRectGetHeight(self.bounds) - kToastDistance - self.textSize().height -  EasyToastConfiguration.toastInnerPadding * 2)
         }
     }
 }

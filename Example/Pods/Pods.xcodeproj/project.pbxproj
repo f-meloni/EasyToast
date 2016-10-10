@@ -36,6 +36,7 @@
 		415F29FE4E9D970954C46CD3CF4AE345 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614CEF798B620B0B98837100B736AF5 /* SatisfyAnyOf.swift */; };
 		416F33F8D33E26BF2AA5A698059F0502 /* Pods-EasyToast_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A9DB02931CBB54BB69F0A03494E61E /* Pods-EasyToast_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42C1B865ACFEDF0D10562F656D5278B2 /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EC748B938739D8B87F415EE175F58D1 /* World.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		445160721DA28124009354C0 /* EasyToastConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445160711DA28124009354C0 /* EasyToastConfiguration.swift */; };
 		44D88EB9EEA47A1F17E3A29B494ACDEB /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = EE15230104557E3A99132C72E8069B79 /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4602D895B3A0F20A7F0E7127DB137E73 /* Pods-EasyToast_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 92DC890700D56B24CFECD2CCC3A7BACE /* Pods-EasyToast_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47CBCE8837CE75AE1B7484A63CE387ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77FF979DB93FFC369BEC3D6B3C8B9C7A /* Foundation.framework */; };
@@ -240,6 +241,7 @@
 		40A4E9A5259FFBF2F5AFEDF2B5340C1E /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
 		425293E77484F37F2F26FA98CECCAB9F /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		440C1E2EE5D680BE6079CE69974985C3 /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
+		445160711DA28124009354C0 /* EasyToastConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyToastConfiguration.swift; sourceTree = "<group>"; };
 		47FF4D7171381A6AA2E29A6E00A8CD6D /* Pods-EasyToast_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyToast_Example.release.xcconfig"; sourceTree = "<group>"; };
 		48F777E25ED36E70CE87097188DADEAA /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		4957F682B3F1EE74D842B29320D0D131 /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 		0D81C13D2B9F09E9833DD9A79BBB673F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				445160711DA28124009354C0 /* EasyToastConfiguration.swift */,
 				8F16692FC8DDCBA3F61D01719EBFD52E /* QueueToast.swift */,
 				9C9A7592BF0094A78840EF8745733627 /* ToastContainerVC.swift */,
 				58F76680B19F33508CC71B96DC029E2C /* ToastWindow.swift */,
@@ -1104,6 +1107,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445160721DA28124009354C0 /* EasyToastConfiguration.swift in Sources */,
 				13472DE872C22F66B8FB633F71DBC3AE /* EasyToast-dummy.m in Sources */,
 				1FDDCA3F1A134C0C22BC7428FA571A41 /* QueueToast.swift in Sources */,
 				519A24FEB907F41CCF7B5EFDCFDC69CB /* ToastContainerVC.swift in Sources */,
