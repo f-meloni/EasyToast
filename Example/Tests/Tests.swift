@@ -16,7 +16,7 @@ class EasyToastTests: QuickSpec {
                 
                 
                 it("Toast has been displayed") {
-                    view.showToast("Toast", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: false)
+                    view.showToast("Toast", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
                     
                     expect(view.hasDisplayedToast).to(beTruthy())
                     expect(UIView.toastWindow).toNot(beNil())
@@ -25,9 +25,9 @@ class EasyToastTests: QuickSpec {
             
             context("Toast tag test", {
                 it("Only one toast is added") {
-                    view.showToast("Toast", tag:"test", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: false)
-                    view.showToast("Toast2", tag:"test", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: false)
-                    view.showToast("Toast3", tag:"test", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: false)
+                    view.showToast("Toast", tag:"test", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
+                    view.showToast("Toast2", tag:"test", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
+                    view.showToast("Toast3", tag:"test", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
                     
                     expect(UIView.toastQueue.count) == 1
                 }

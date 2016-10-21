@@ -6,9 +6,7 @@ target 'EasyToast_Example' do
   target 'EasyToast_Tests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 0.8'
-    pod 'Nimble', '~> 3.0'
-    pod 'FBSnapshotTestCase'
-    pod 'Nimble-Snapshots'
+    pod 'Quick', '~> 0.10.0'
+    pod 'Nimble', '~> 5.0'
   end
 end

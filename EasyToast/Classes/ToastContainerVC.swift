@@ -13,7 +13,7 @@ class ToastContainerVC: UIViewController {
         super.viewDidLoad()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIApplication.sharedApplication().statusBarStyle
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIApplication.shared.statusBarStyle
     }
 }

@@ -10,13 +10,13 @@ import UIKit
 import EasyToast
 
 class ViewController: UIViewController {
-    private lazy var button : UIButton = {
-        let button = UIButton(type: .System)
+    fileprivate lazy var button : UIButton = {
+        let button = UIButton(type: .system)
         
-        button.frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 50)
-        button.titleLabel?.font = UIFont.systemFontOfSize(21)
-        button.setTitle("Send Toasts", forState: .Normal)
-        button.addTarget(self, action: #selector(showToast), forControlEvents: .TouchUpInside)
+        button.frame = CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 21)
+        button.setTitle("Send Toasts", for: UIControlState())
+        button.addTarget(self, action: #selector(showToast), for: .touchUpInside)
         
         return button
     }()
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.button.frame = CGRectMake(0, 50, CGRectGetWidth(self.view.frame), 50)
+        self.button.frame = CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,25 +44,25 @@ class ViewController: UIViewController {
     }
     
     func showToast() {
-        self.view.toastBackgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
-        self.view.toastTextColor = UIColor.whiteColor()
-        self.view.toastFont = UIFont.boldSystemFontOfSize(19)
+        self.view.toastBackgroundColor = UIColor.black.withAlphaComponent(0.8)
+        self.view.toastTextColor = UIColor.white
+        self.view.toastFont = UIFont.boldSystemFont(ofSize: 19)
         
-        self.view.showToast("Toast", position: .Bottom, popTime: 1.5, dismissOnTap: false)
-        self.view.showToast("Dismiss on tap toast", position: .Bottom, popTime: kToastNoPopTime, dismissOnTap: true, bgColor: UIColor.redColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(19))
+        self.view.showToast("Toast", position: .bottom, popTime: 1.5, dismissOnTap: false)
+        self.view.showToast("Dismiss on tap toast", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: true, bgColor: UIColor.red.withAlphaComponent(0.7), textColor: UIColor.white, font: UIFont.systemFont(ofSize: 19))
         self.view.showToast("Long Text Toast:\n" +
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae elit non leo pellentesque feugiat. Cras nec volutpat massa, nec blandit nisi. Etiam ut hendrerit purus. Morbi accumsan, risus ut cursus finibus, quam ipsum egestas nisl, vel hendrerit massa justo nec metus. Cras pulvinar, leo eu pulvinar convallis, tellus felis laoreet massa, ac tincidunt orci massa non odio. Ut pulvinar dictum metus quis mollis. Aenean tincidunt sit amet turpis sed egestas. Morbi porta dolor neque, ut pellentesque urna semper id. Cras rhoncus consequat justo. Cras dictum enim orci, ac vestibulum enim cursus id.",
-                            position: .Bottom,
+                            position: .bottom,
                             popTime: 5,
                             dismissOnTap: true,
-                            bgColor: UIColor.redColor().colorWithAlphaComponent(0.7),
-                            textColor: UIColor.whiteColor(),
-                            font: UIFont.systemFontOfSize(19))
+                            bgColor: UIColor.red.withAlphaComponent(0.7),
+                            textColor: UIColor.white,
+                            font: UIFont.systemFont(ofSize: 19))
         
     }
 
     func closeModal() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

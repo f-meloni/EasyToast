@@ -12,7 +12,7 @@ import Foundation
  Toast extension for UIView
 **/
 public extension UIView {
-    private struct AssociatedKeys {
+    fileprivate struct AssociatedKeys {
         static var toastWindow = "toastWindow"
         static var toastBackgroundColor = "toastWindow"
         static var toastTextColor = "toastTextColor"
@@ -36,7 +36,7 @@ public extension UIView {
             - textColor: Toast Text Color
             - font: Toast font
     */
-    public func showToast(message: String, tag: String? = nil, position: ToastPosition, popTime: Double?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
+    public func showToast(_ message: String, tag: String? = nil, position: ToastPosition, popTime: Double?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
         let queueToast = QueueToast(message: message, tag: tag, position: position, popTime: popTime, dismissOnTap: dismissOnTap, bgColor: bgColor, textColor: textColor, font: font)
         
         if bgColor == nil {
@@ -57,17 +57,17 @@ public extension UIView {
             }
         }
         
-        self.dynamicType.showToast(queueToast)
+        type(of: self).showToast(queueToast)
     }
     
-    private class func showToast(toast: QueueToast) {
-        let lockQueue = dispatch_queue_create("easyToast.toast.queue", nil)
-        dispatch_sync(lockQueue) {
+    fileprivate class func showToast(_ toast: QueueToast) {
+        let lockQueue = DispatchQueue(label: "easyToast.toast.queue", attributes: [])
+        lockQueue.sync {
             if hasDisplayedToast ?? false {
                 var appendToast = true
                 
                 if let toastTag = toast.tag {
-                    if self.toastQueue.contains({ queueToast in queueToast.tag == toastTag }) {
+                    if self.toastQueue.contains(where: { queueToast in queueToast.tag == toastTag }) {
                         appendToast = false
                     }
                 }
@@ -81,11 +81,11 @@ public extension UIView {
             
             let popTime = toast.popTime ?? kToastNoPopTime
             
-            self.toastWindow = ToastWindow(frame: UIScreen.mainScreen().bounds)
+            self.toastWindow = ToastWindow(frame: UIScreen.main.bounds)
             self.toastWindow?.toast = toast
             
             self.toastWindow?.onToastDimissed = { toastWindow in
-                dispatch_sync(lockQueue) {
+                lockQueue.sync {
                     let toast = toastWindow.toast
                     
                     self.toastTimer?.invalidate()
@@ -110,7 +110,7 @@ public extension UIView {
             self.toastWindow?.show()
             
             if popTime != kToastNoPopTime {
-                self.toastTimer = NSTimer.scheduledTimerWithTimeInterval(popTime, target: self, selector: #selector(dismissToast), userInfo: nil, repeats: false)
+                self.toastTimer = Timer.scheduledTimer(timeInterval: popTime, target: self, selector: #selector(dismissToast), userInfo: nil, repeats: false)
             }
         }
     }
@@ -118,7 +118,7 @@ public extension UIView {
     
     //MARK: Class Getters and Setters
     
-    private class var hasDisplayedToast: Bool {
+    fileprivate class var hasDisplayedToast: Bool {
         get {
             guard let toastQueue = objc_getAssociatedObject(self, &AssociatedKeys.hasDiplayedToast) as? Bool else {
                 return false
@@ -142,9 +142,9 @@ public extension UIView {
         }
     }
     
-    private class var toastTimer: NSTimer? {
+    fileprivate class var toastTimer: Timer? {
         get {
-            guard let toastTimer = objc_getAssociatedObject(self, &AssociatedKeys.toastTimer) as? NSTimer else {
+            guard let toastTimer = objc_getAssociatedObject(self, &AssociatedKeys.toastTimer) as? Timer else {
                 return nil
             }
             return toastTimer

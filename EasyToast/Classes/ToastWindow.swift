@@ -18,15 +18,15 @@ public enum ToastPosition {
     /**
      Toast will be shown on the bottom of the screen
     */
-    case Bottom
+    case bottom
     
     /**
      Toast will be shown on the top of the screen
     */
-    case Top
+    case top
 }
 
-private let kMaxToastWidth: CGFloat = UIDevice.currentDevice().userInterfaceIdiom == .Pad ? 500 : 300
+private let kMaxToastWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 500 : 300
 
 private let kToastDistance: CGFloat = 100
 
@@ -36,10 +36,10 @@ private let kToastDistance: CGFloat = 100
 public let kToastNoPopTime : Double = 0
 
 class ToastWindow: UIWindow {
-    private lazy var textLabel: UILabel = {
+    fileprivate lazy var textLabel: UILabel = {
         let padding = EasyToastConfiguration.toastInnerPadding
         
-        let textLabel = UILabel(frame: CGRectMake(padding, padding, CGRectGetHeight(self.toastView.frame) - (padding * 2), CGRectGetWidth(self.toastView.frame) - (padding * 2)))
+        let textLabel = UILabel(frame: CGRect(x: padding, y: padding, width: self.toastView.frame.height - (padding * 2), height: self.toastView.frame.width - (padding * 2)))
         textLabel.numberOfLines = 0
         textLabel.font = self.font
         textLabel.textColor = self.textColor
@@ -47,8 +47,8 @@ class ToastWindow: UIWindow {
         return textLabel
     }()
     
-    private lazy var toastView: UIView = {
-        let toastView = UIView(frame: CGRectZero)
+    fileprivate lazy var toastView: UIView = {
+        let toastView = UIView(frame: CGRect.zero)
         
         toastView.backgroundColor = self.toastBgColor
         toastView.layer.cornerRadius = 5
@@ -57,21 +57,21 @@ class ToastWindow: UIWindow {
         return toastView
     }()
     
-    private lazy var containerVC: UIViewController = {
+    fileprivate lazy var containerVC: UIViewController = {
         let containerVC = ToastContainerVC(nibName: nil, bundle: nil)
         containerVC.view.addSubview(self.toastView)
         
         return containerVC
     }()
     
-    private let oldWindow: UIWindow?
+    fileprivate let oldWindow: UIWindow?
     
     var toast: QueueToast? {
         didSet {
             let popTime = toast?.popTime ?? kToastNoPopTime
             
             self.text = toast?.message
-            self.toastPosition = toast?.position ?? .Bottom
+            self.toastPosition = toast?.position ?? .bottom
             self.dismissOnTap = popTime == kToastNoPopTime ? true : toast?.dismissOnTap ?? false
             
             if let toastBackgroundColor = toast?.bgColor  {
@@ -88,11 +88,11 @@ class ToastWindow: UIWindow {
         }
     }
     
-    var toastPosition: ToastPosition = .Bottom
+    var toastPosition: ToastPosition = .bottom
     
     var dismissOnTap: Bool = false {
         didSet {
-            self.userInteractionEnabled = self.dismissOnTap
+            self.isUserInteractionEnabled = self.dismissOnTap
         }
     }
     
@@ -102,43 +102,43 @@ class ToastWindow: UIWindow {
         }
     }
     
-    var toastBgColor: UIColor = UIColor.blackColor().colorWithAlphaComponent(0.7) {
+    var toastBgColor: UIColor = UIColor.black.withAlphaComponent(0.7) {
         didSet {
             self.toastView.backgroundColor = self.toastBgColor
         }
     }
     
-    var font: UIFont = UIFont.systemFontOfSize(19) {
+    var font: UIFont = UIFont.systemFont(ofSize: 19) {
         didSet {
             self.textLabel.font = self.font
         }
     }
     
-    var textColor: UIColor = UIColor.whiteColor() {
+    var textColor: UIColor = UIColor.white {
         didSet {
             self.textLabel.textColor = self.textColor
         }
     }
     
-    var onToastDimissed: ((toast: ToastWindow) -> ())?
+    var onToastDimissed: ((_ toast: ToastWindow) -> ())?
     
-    private var tapGestureRecognizer: UITapGestureRecognizer?
+    fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
     
-    private func commonInit() {
-        self.opaque = false
-        self.backgroundColor = UIColor.clearColor()
-        self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    fileprivate func commonInit() {
+        self.isOpaque = false
+        self.backgroundColor = UIColor.clear
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.windowLevel = UIWindowLevelNormal
         self.rootViewController = self.containerVC
         self.toastView.addSubview(self.textLabel)
-        self.userInteractionEnabled = false
+        self.isUserInteractionEnabled = false
         
         self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(windowTapped))
         self.addGestureRecognizer(self.tapGestureRecognizer!)
     }
     
     override init(frame: CGRect) {
-        self.oldWindow = UIApplication.sharedApplication().keyWindow
+        self.oldWindow = UIApplication.shared.keyWindow
         
         super.init(frame: frame)
         
@@ -146,7 +146,7 @@ class ToastWindow: UIWindow {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.oldWindow = UIApplication.sharedApplication().keyWindow
+        self.oldWindow = UIApplication.shared.keyWindow
         
         super.init(coder: aDecoder)
         
@@ -161,32 +161,32 @@ class ToastWindow: UIWindow {
     
     func show() {
         self.makeKeyAndVisible()
-        self.containerVC.view.frame = UIScreen.mainScreen().applicationFrame
+        self.containerVC.view.frame = UIScreen.main.applicationFrame
         
         self.toastView.frame = self.toastStartPosition()
         
         let padding = EasyToastConfiguration.toastInnerPadding
         
-        self.textLabel.frame = CGRectMake(padding, padding, CGRectGetWidth(self.toastView.frame) - (padding * 2), CGRectGetHeight(self.toastView.frame) - (padding * 2))
+        self.textLabel.frame = CGRect(x: padding, y: padding, width: self.toastView.frame.width - (padding * 2), height: self.toastView.frame.height - (padding * 2))
         
-        UIView.animateWithDuration(EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: .TransitionNone, animations: {
+        UIView.animate(withDuration: EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: UIViewAnimationOptions(), animations: {
             self.toastView.frame = self.toastEndPosition()
             }, completion: nil)
     }
     
     
     func dismiss() {
-        let lockQueue = dispatch_queue_create("easyToast.toast.dismissQueue", nil)
-        dispatch_sync(lockQueue) { [weak self] in
-            UIView.animateWithDuration(EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: .TransitionNone, animations: {
-                self?.toastView.frame = self?.toastStartPosition() ?? CGRectZero
+        let lockQueue = DispatchQueue(label: "easyToast.toast.dismissQueue", attributes: [])
+        lockQueue.sync { [weak self] in
+            UIView.animate(withDuration: EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: UIViewAnimationOptions(), animations: {
+                self?.toastView.frame = self?.toastStartPosition() ?? CGRect.zero
             }) { (success) in
-                self?.hidden = true
+                self?.isHidden = true
                 self?.oldWindow?.makeKeyAndVisible()
-                self?.resignKeyWindow()
+                self?.resignKey()
                 
                 if let onToastDimissed = self?.onToastDimissed {
-                    onToastDimissed(toast: self ?? ToastWindow())
+                    onToastDimissed(self ?? ToastWindow())
                 }
             }
         }
@@ -195,43 +195,43 @@ class ToastWindow: UIWindow {
     //MARK: Actions
     
     func windowTapped() {
-        self.userInteractionEnabled = false
+        self.isUserInteractionEnabled = false
         self.dismiss()
     }
     
     //MARK: Private
     
-    private func textSize() -> CGSize {
-        let size = self.textLabel.sizeThatFits(CGSizeMake(kMaxToastWidth, CGFloat.max))
+    fileprivate func textSize() -> CGSize {
+        let size = self.textLabel.sizeThatFits(CGSize(width: kMaxToastWidth, height: CGFloat.greatestFiniteMagnitude))
         
         return size
     }
     
-    private func rectWithY(y: CGFloat) -> CGRect {
+    fileprivate func rectWithY(_ y: CGFloat) -> CGRect {
         let size = self.textSize()
         
         let padding = EasyToastConfiguration.toastInnerPadding
         
         let viewWidth = (size.width + padding * 2)
         
-        return CGRectMake((CGRectGetWidth(self.bounds) - viewWidth)/2, y, viewWidth, size.height +  padding * 2)
+        return CGRect(x: (self.bounds.width - viewWidth)/2, y: y, width: viewWidth, height: size.height +  padding * 2)
     }
     
-    private func toastStartPosition() -> CGRect {
-        if toastPosition == .Top {
-            return self.rectWithY(-self.textSize().height - EasyToastConfiguration.toastInnerPadding * 2 - UIApplication.sharedApplication().statusBarFrame.size.height)
+    fileprivate func toastStartPosition() -> CGRect {
+        if toastPosition == .top {
+            return self.rectWithY(-self.textSize().height - EasyToastConfiguration.toastInnerPadding * 2 - UIApplication.shared.statusBarFrame.size.height)
         }
         else {
-            return self.rectWithY(CGRectGetHeight(self.bounds))
+            return self.rectWithY(self.bounds.height)
         }
     }
 
-    private func toastEndPosition() -> CGRect {
-        if toastPosition == .Top {
+    fileprivate func toastEndPosition() -> CGRect {
+        if toastPosition == .top {
             return self.rectWithY(kToastDistance)
         }
         else {
-            return self.rectWithY(CGRectGetHeight(self.bounds) - kToastDistance - self.textSize().height -  EasyToastConfiguration.toastInnerPadding * 2)
+            return self.rectWithY(self.bounds.height - kToastDistance - self.textSize().height -  EasyToastConfiguration.toastInnerPadding * 2)
         }
     }
 }

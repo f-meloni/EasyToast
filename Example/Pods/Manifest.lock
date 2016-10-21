@@ -1,35 +1,22 @@
 PODS:
-  - EasyToast (0.9.3)
-  - FBSnapshotTestCase (2.1.2):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.2)
-  - FBSnapshotTestCase/Core (2.1.2)
-  - FBSnapshotTestCase/SwiftSupport (2.1.2):
-    - FBSnapshotTestCase/Core
-  - Nimble (3.2.0)
-  - Nimble-Snapshots (4.1.0):
-    - FBSnapshotTestCase (~> 2.0)
-    - Nimble
-    - Quick
-  - Quick (0.9.3)
+  - EasyToast (1.1.1)
+  - Nimble (5.0.0)
+  - Quick (0.10.0)
 
 DEPENDENCIES:
   - EasyToast (from `../`)
-  - FBSnapshotTestCase
-  - Nimble (~> 3.0)
-  - Nimble-Snapshots
-  - Quick (~> 0.8)
+  - Nimble (~> 5.0)
+  - Quick (~> 0.10.0)
 
 EXTERNAL SOURCES:
   EasyToast:
     :path: ../
 
 SPEC CHECKSUMS:
-  EasyToast: 351aac72fd5098090d0f86453140b9f99ca30974
-  FBSnapshotTestCase: 918c55861356ee83aee7843d759f55a18ff6982b
-  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
-  Nimble-Snapshots: 2da4d2ec829b458d6886c06812c52493fce284c9
-  Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
+  EasyToast: 55458541fb244efcae1478d0d4d2352ea24abadf
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
-PODFILE CHECKSUM: 4548ccb73239016444348592cc9e2a6a181b3065
+PODFILE CHECKSUM: 38bf4f8e5bae22d80423e4618167fb40df11fd81
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
