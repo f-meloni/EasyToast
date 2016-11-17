@@ -16,4 +16,8 @@ class ToastContainerVC: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIApplication.sharedApplication().statusBarStyle
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return UIApplication.sharedApplication().statusBarHidden
+    }
 }
