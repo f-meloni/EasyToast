@@ -16,7 +16,7 @@ Depending on which version of Swift your project uses, you should use specific v
 
 |Swift version         |EasyToast version   |
 |:---------------------|:-------------------|
-|Swift 3               |`2.0.0`             |
+|Swift 3               |`2.0.0` or later    |
 |Swift 2.2             |`1.1.2`             |
 
 

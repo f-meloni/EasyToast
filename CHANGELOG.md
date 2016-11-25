@@ -1,5 +1,8 @@
 #CHANGELOG
 
+##Version 2.0.1
+Minor fixes
+
 ##Version 2.0.0
 Swift 3 support
 
