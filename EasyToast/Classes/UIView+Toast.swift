@@ -63,7 +63,7 @@ public extension UIView {
     fileprivate class func showToast(_ toast: QueueToast) {
         let lockQueue = DispatchQueue(label: "easyToast.toast.queue", attributes: [])
         lockQueue.sync {
-            if hasDisplayedToast ?? false {
+            guard self.hasDisplayedToast else {
                 var appendToast = true
                 
                 if let toastTag = toast.tag {
@@ -93,7 +93,7 @@ public extension UIView {
                     self.toastTimer = nil
                     self.toastWindow = nil
                     
-                    self.toastQueue = self.toastQueue.filter() { $0 !== toast } ?? []
+                    self.toastQueue = self.toastQueue.filter() { $0 !== toast } 
                     
                     self.hasDisplayedToast = false
                     
