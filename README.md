@@ -7,6 +7,10 @@
 
 Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear 
 
+## Requirements
+- Swift: 2.2
+- iOS: 8+
+
 ## Example Project
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
