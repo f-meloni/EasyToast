@@ -1,5 +1,11 @@
 #CHANGELOG
 
+##Version 2.0.0
+Swift 3 support
+
+##Version 1.1.2
+Fix: Present a toast now doesn't make your status bar appear if is hidden
+
 ##Version 1.1.1
 Added toasts configuration
 
@@ -19,4 +25,4 @@ Added more documentation
 Minor fixes
 
 ##Version 0.9
-Fixed status bar color change when a toast is presented
+Fix: Status bar color now doesn't change when a toast is presented
