@@ -63,7 +63,7 @@ public extension UIView {
     fileprivate class func showToast(_ toast: QueueToast) {
         let lockQueue = DispatchQueue(label: "easyToast.toast.queue", attributes: [])
         lockQueue.sync {
-            guard self.hasDisplayedToast else {
+            guard !self.hasDisplayedToast else {
                 var appendToast = true
                 
                 if let toastTag = toast.tag {
