@@ -1,5 +1,8 @@
 #CHANGELOG
 
+##Version 2.0.2
+Fixes on toast displaying, changed iphone toast max size"
+
 ##Version 2.0.1
 Minor fixes
 
