@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         self.view.showToast("Toast", position: .bottom, popTime: 1.5, dismissOnTap: false)
         self.view.showToast("Dismiss on tap toast", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: true, bgColor: UIColor.red.withAlphaComponent(0.7), textColor: UIColor.white, font: UIFont.systemFont(ofSize: 19))
         self.view.showToast("Long Text Toast:\n" +
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae elit non leo pellentesque feugiat. Cras nec volutpat massa, nec blandit nisi. Etiam ut hendrerit purus. Morbi accumsan, risus ut cursus finibus, quam ipsum egestas nisl, vel hendrerit massa justo nec metus. Cras pulvinar, leo eu pulvinar convallis, tellus felis laoreet massa, ac tincidunt orci massa non odio. Ut pulvinar dictum metus quis mollis. Aenean tincidunt sit amet turpis sed egestas. Morbi porta dolor neque, ut pellentesque urna semper id. Cras rhoncus consequat justo. Cras dictum enim orci, ac vestibulum enim cursus id.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae elit non leo pellentesque feugiat. Cras nec volutpat massa, nec blandit nisi. Etiam ut hendrerit purus. Morbi accumsan, risus ut cursus finibus, quam ipsum egestas nisl, vel hendrerit massa justo nec metus. Cras pulvinar, leo eu pulvinar convallis, tellus felis laoreet massa, ac tincidunt orci massa non odio. Ut pulvinar dictum metus quis mollis. Aenean tincidunt sit amet turpis sed egestas. Morbi porta dolor neque, ut pellentesque urna semper id.",
                             position: .bottom,
                             popTime: 5,
                             dismissOnTap: true,

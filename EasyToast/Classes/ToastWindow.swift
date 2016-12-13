@@ -26,7 +26,7 @@ public enum ToastPosition {
     case top
 }
 
-private let kMaxToastWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 500 : 300
+private let kMaxToastWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 500 : 280
 
 private let kToastDistance: CGFloat = 100
 
