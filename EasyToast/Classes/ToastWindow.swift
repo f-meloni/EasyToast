@@ -200,13 +200,13 @@ class ToastWindow: UIWindow {
     
     //MARK: Private
     
-    fileprivate func textSize() -> CGSize {
+    private func textSize() -> CGSize {
         let size = self.textLabel.sizeThatFits(CGSize(width: kMaxToastWidth, height: CGFloat.greatestFiniteMagnitude))
     
         return size
     }
     
-    fileprivate func rectWithY(_ y: CGFloat) -> CGRect {
+    private func rectWithY(_ y: CGFloat) -> CGRect {
         let size = self.textSize()
         
         let padding = EasyToastConfiguration.toastInnerPadding
@@ -216,7 +216,7 @@ class ToastWindow: UIWindow {
         return CGRect(x: (self.bounds.width - viewWidth)/2, y: y, width: viewWidth, height: size.height +  padding * 2)
     }
     
-    fileprivate func toastStartPosition() -> CGRect {
+    private func toastStartPosition() -> CGRect {
         if toastPosition == .top {
             return self.rectWithY(-self.textSize().height - EasyToastConfiguration.toastInnerPadding * 2 - UIApplication.shared.statusBarFrame.size.height)
         }
@@ -225,7 +225,7 @@ class ToastWindow: UIWindow {
         }
     }
 
-    fileprivate func toastEndPosition() -> CGRect {
+    private func toastEndPosition() -> CGRect {
         if toastPosition == .top {
             return self.rectWithY(kToastDistance)
         }
