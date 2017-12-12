@@ -35,7 +35,7 @@ private let kToastDistance: CGFloat = 100
 public let kToastNoPopTime : Double = 0
 
 class ToastWindow: UIWindow {
-    fileprivate lazy var textLabel: UILabel = {
+    private lazy var textLabel: UILabel = {
         let padding = EasyToastConfiguration.toastInnerPadding
         
         let textLabel = UILabel(frame: CGRect(x: padding, y: padding, width: self.toastView.frame.height - (padding * 2), height: self.toastView.frame.width - (padding * 2)))
@@ -46,7 +46,7 @@ class ToastWindow: UIWindow {
         return textLabel
     }()
     
-    fileprivate lazy var toastView: UIView = {
+    private lazy var toastView: UIView = {
         let toastView = UIView(frame: CGRect.zero)
         
         toastView.backgroundColor = self.toastBgColor
@@ -56,14 +56,14 @@ class ToastWindow: UIWindow {
         return toastView
     }()
     
-    fileprivate lazy var containerVC: UIViewController = {
+    private lazy var containerVC: UIViewController = {
         let containerVC = ToastContainerVC(nibName: nil, bundle: nil)
         containerVC.view.addSubview(self.toastView)
         
         return containerVC
     }()
     
-    fileprivate let oldWindow: UIWindow?
+    private let oldWindow: UIWindow?
     
     var toast: QueueToast? {
         didSet {
@@ -121,9 +121,9 @@ class ToastWindow: UIWindow {
     
     var onToastDimissed: ((_ toast: ToastWindow) -> ())?
     
-    fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
+    private var tapGestureRecognizer: UITapGestureRecognizer?
     
-    fileprivate func commonInit() {
+    private func commonInit() {
         self.isOpaque = false
         self.backgroundColor = UIColor.clear
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
