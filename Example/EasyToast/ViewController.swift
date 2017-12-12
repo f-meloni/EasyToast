@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func showToast() {
+    @objc func showToast() {
         self.view.toastBackgroundColor = UIColor.black.withAlphaComponent(0.8)
         self.view.toastTextColor = UIColor.white
         self.view.toastFont = UIFont.boldSystemFont(ofSize: 19)

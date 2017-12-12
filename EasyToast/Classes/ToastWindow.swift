@@ -27,7 +27,6 @@ public enum ToastPosition {
 }
 
 private let kMaxToastWidth: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 500 : 280
-
 private let kToastDistance: CGFloat = 100
 
 /**
@@ -96,7 +95,7 @@ class ToastWindow: UIWindow {
         }
     }
     
-    var text: String? {
+    @objc var text: String? {
         didSet {
             self.textLabel.text = self.text
         }
@@ -194,7 +193,7 @@ class ToastWindow: UIWindow {
     
     //MARK: Actions
     
-    func windowTapped() {
+    @objc func windowTapped() {
         self.isUserInteractionEnabled = false
         self.dismiss()
     }
@@ -203,7 +202,7 @@ class ToastWindow: UIWindow {
     
     fileprivate func textSize() -> CGSize {
         let size = self.textLabel.sizeThatFits(CGSize(width: kMaxToastWidth, height: CGFloat.greatestFiniteMagnitude))
-        
+    
         return size
     }
     

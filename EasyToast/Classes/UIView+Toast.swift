@@ -234,7 +234,7 @@ public extension UIView {
     /**
      Class method to dismiss currently shown toast
     */
-    internal class func dismissToast() {
+    @objc internal class func dismissToast() {
         self.toastWindow?.dismiss()
     }
 }

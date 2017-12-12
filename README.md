@@ -1,6 +1,6 @@
 # EasyToast
 
-![Swift 3.0](https://img.shields.io/badge/Swift-3.0-red.svg)
+![Swift 4.0](https://img.shields.io/badge/Swift-4.0-blue.svg)
 [![Version](https://img.shields.io/cocoapods/v/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 [![License](https://img.shields.io/cocoapods/l/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 [![Platform](https://img.shields.io/cocoapods/p/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
