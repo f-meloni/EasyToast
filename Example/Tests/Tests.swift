@@ -11,20 +11,18 @@ class EasyToastTests: QuickSpec {
         
         let view = UIView()
         
-        describe("Display test") {
-            context("Display a toast on a new view", {
-                
-                
-                it("Toast has been displayed") {
+        describe("Display tests") {
+            context("When show tost is called on a view", {
+                it("dispays the toast") {
                     view.showToast("Toast", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
                     
-                    expect(view.hasDisplayedToast).to(beTruthy())
+                    expect(view.hasDisplayedToast) == true
                     expect(UIView.toastWindow).toNot(beNil())
                 }
             })
             
-            context("Toast tag test", {
-                it("Only one toast is added") {
+            context("When many toasts are added with the same tag", {
+                it("adds only the first toast to the queue") {
                     view.showToast("Toast", tag:"test", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
                     view.showToast("Toast2", tag:"test", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
                     view.showToast("Toast3", tag:"test", position: .bottom, popTime: kToastNoPopTime, dismissOnTap: false)
