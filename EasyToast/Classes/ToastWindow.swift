@@ -206,7 +206,7 @@ class ToastWindow: UIWindow {
         return size
     }
     
-    private func rectWithY(_ y: CGFloat) -> CGRect {
+    private func rect(withY y: CGFloat) -> CGRect {
         let size = self.textSize()
         
         let padding = EasyToastConfiguration.toastInnerPadding
@@ -217,20 +217,45 @@ class ToastWindow: UIWindow {
     }
     
     private func toastStartPosition() -> CGRect {
-        if toastPosition == .top {
-            return self.rectWithY(-self.textSize().height - EasyToastConfiguration.toastInnerPadding * 2 - UIApplication.shared.statusBarFrame.size.height)
-        }
-        else {
-            return self.rectWithY(self.bounds.height)
-        }
+        return rect(withY: startY(forPosition: toastPosition))
     }
 
     private func toastEndPosition() -> CGRect {
+        return rect(withY: endY(forPosition: toastPosition))
+    }
+    
+    private func startY(forPosition: ToastPosition) -> CGFloat {
+        var y: CGFloat
+        
         if toastPosition == .top {
-            return self.rectWithY(kToastDistance)
+            y =  -textSize().height - EasyToastConfiguration.toastInnerPadding * 2 - UIApplication.shared.statusBarFrame.size.height
         }
         else {
-            return self.rectWithY(self.bounds.height - kToastDistance - self.textSize().height -  EasyToastConfiguration.toastInnerPadding * 2)
+            y = bounds.height
         }
+        
+        return y
+    }
+    
+    private func endY(forPosition: ToastPosition) -> CGFloat {
+        var y: CGFloat
+        let useSafeArea: Bool = EasyToastConfiguration.useSafeArea
+        
+        if toastPosition == .top {
+            y =  kToastDistance
+            
+            if useSafeArea, #available(iOS 11.0, *) {
+                y += safeAreaInsets.top
+            }
+        }
+        else {
+            y = self.bounds.height - kToastDistance - self.textSize().height -  EasyToastConfiguration.toastInnerPadding * 2
+            
+            if useSafeArea, #available(iOS 11.0, *) {
+                y -= safeAreaInsets.bottom
+            }
+        }
+        
+        return y
     }
 }
