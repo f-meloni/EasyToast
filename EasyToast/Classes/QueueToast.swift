@@ -30,4 +30,3 @@ class QueueToast {
         self.font = font
     }
 }
-
