@@ -1,5 +1,5 @@
 PODS:
-  - EasyToast (1.1.1)
+  - EasyToast (2.0.2)
   - Nimble (5.0.0)
   - Quick (0.10.0)
 
@@ -13,10 +13,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  EasyToast: 55458541fb244efcae1478d0d4d2352ea24abadf
+  EasyToast: d37b9ea58aec4376871b5b984b959b80faa2777b
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
 PODFILE CHECKSUM: 38bf4f8e5bae22d80423e4618167fb40df11fd81
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0.beta.1

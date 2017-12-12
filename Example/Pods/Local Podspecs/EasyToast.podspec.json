@@ -1,6 +1,6 @@
 {
   "name": "EasyToast",
-  "version": "1.1.1",
+  "version": "2.0.2",
   "summary": "Swift Android like toasts",
   "description": "Swift Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear",
   "homepage": "https://github.com/f-meloni/EasyToast",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/f-meloni/EasyToast.git",
-    "tag": "1.1.1"
+    "tag": "2.0.2"
   },
   "platforms": {
     "ios": "8.0"
