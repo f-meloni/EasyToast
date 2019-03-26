@@ -127,7 +127,7 @@ class ToastWindow: UIWindow {
         self.isOpaque = false
         self.backgroundColor = UIColor.clear
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.windowLevel = UIWindowLevelNormal
+        self.windowLevel = UIWindow.Level.normal
         self.rootViewController = self.containerVC
         self.toastView.addSubview(self.textLabel)
         self.isUserInteractionEnabled = false
@@ -168,7 +168,7 @@ class ToastWindow: UIWindow {
 
         self.textLabel.frame = CGRect(x: padding, y: padding, width: self.toastView.frame.width - (padding * 2), height: self.toastView.frame.height - (padding * 2))
 
-        UIView.animate(withDuration: EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: UIView.AnimationOptions(), animations: {
             self.toastView.frame = self.toastEndPosition()
             }, completion: nil)
     }
@@ -176,7 +176,7 @@ class ToastWindow: UIWindow {
     func dismiss() {
         let lockQueue = DispatchQueue(label: "easyToast.toast.dismissQueue", attributes: [])
         lockQueue.sync { [weak self] in
-            UIView.animate(withDuration: EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: UIViewAnimationOptions(), animations: {
+            UIView.animate(withDuration: EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: UIView.AnimationOptions(), animations: {
                 self?.toastView.frame = self?.toastStartPosition() ?? CGRect.zero
             }) { (_) in
                 self?.isHidden = true

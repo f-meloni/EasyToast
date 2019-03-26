@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasyToast'
-  s.version          = '2.0.2'
+  s.version          = '3.0.0'
   s.summary          = 'Swift Android like toasts'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Swift Android-like toast with simple interface, using a toast queue to handle mu
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'EasyToast/Classes/**/*'
-  s.xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  # s.xcconfig = { 'SWIFT_VERSION' => '4.0' }
   
   # s.resource_bundles = {
   #   'EasyToast' => ['EasyToast/Assets/*.png']

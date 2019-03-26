@@ -1,5 +1,8 @@
 #CHANGELOG
 
+##Version 3.0.0
+Swift 5 support
+
 ##Version 2.0.2
 Fixes on toast displaying, changed iphone toast max size"
 

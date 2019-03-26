@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         
         button.frame = CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 21)
-        button.setTitle("Send Toasts", for: UIControlState())
+        button.setTitle("Send Toasts", for: UIControl.State())
         button.addTarget(self, action: #selector(showToast), for: .touchUpInside)
         
         return button
