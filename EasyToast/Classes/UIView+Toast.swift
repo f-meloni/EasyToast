@@ -36,7 +36,7 @@ public extension UIView {
             - textColor: Toast Text Color
             - font: Toast font
     */
-    public func showToast(_ message: String, tag: String? = nil, position: ToastPosition, popTime: Double?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
+    func showToast(_ message: String, tag: String? = nil, position: ToastPosition, popTime: Double?, dismissOnTap: Bool, bgColor: UIColor? = nil, textColor: UIColor? = nil, font: UIFont? = nil) {
         let queueToast = QueueToast(message: message, tag: tag, position: position, popTime: popTime, dismissOnTap: dismissOnTap, bgColor: bgColor, textColor: textColor, font: font)
 
         if bgColor == nil {
@@ -168,7 +168,7 @@ public extension UIView {
     /**
      Defines if there is already a displayed toast in view
     */
-    public var hasDisplayedToast: Bool {
+    var hasDisplayedToast: Bool {
         get {
             return UIView.hasDisplayedToast
         }
@@ -179,7 +179,7 @@ public extension UIView {
     /** 
     View toasts default background color
     */
-    public var toastBackgroundColor: UIColor? {
+    var toastBackgroundColor: UIColor? {
         get {
             guard let toastBackgroundColor = objc_getAssociatedObject(self, &AssociatedKeys.toastBackgroundColor) as? UIColor else {
                 return nil
@@ -194,7 +194,7 @@ public extension UIView {
     /**
     View toasts default text color
     */
-    public var toastTextColor: UIColor? {
+    var toastTextColor: UIColor? {
         get {
             guard let toastTextColor = objc_getAssociatedObject(self, &AssociatedKeys.toastTextColor) as? UIColor else {
                 return nil
@@ -209,7 +209,7 @@ public extension UIView {
     /**
     View toasts default font
     */
-    public var toastFont: UIFont? {
+    var toastFont: UIFont? {
         get {
             guard let toastFont = objc_getAssociatedObject(self, &AssociatedKeys.toastFont) as? UIFont else {
                 return nil
@@ -226,7 +226,7 @@ public extension UIView {
     /**
         Dismiss currently shown toast
     */
-    public func dismissToast() {
+    func dismissToast() {
         UIView.dismissToast()
     }
 

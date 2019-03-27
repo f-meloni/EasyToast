@@ -1,6 +1,6 @@
 # EasyToast
 
-![Swift 4.0](https://img.shields.io/badge/Swift-4.0-blue.svg)
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-blue.svg)
 [![Version](https://img.shields.io/cocoapods/v/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 [![License](https://img.shields.io/cocoapods/l/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
 [![Platform](https://img.shields.io/cocoapods/p/EasyToast.svg?style=flat)](http://cocoapods.org/pods/EasyToast)
@@ -8,7 +8,7 @@
 Android-like toast with simple interface, using a toast queue to handle multiple toasts allowing to push or present a ViewController without disappear 
 
 ## Requirements
-- Swift: 3.0
+- Swift: 4.x
 - iOS: 8+
 
 ## Swift Version
@@ -16,7 +16,8 @@ Depending on which version of Swift your project uses, you should use specific v
 
 |Swift version         |EasyToast version   |
 |:---------------------|:-------------------|
-|Swift 3               |`2.0.0` or later    |
+|Swift 4.2 - 5.0       |`3.0.0` or later    |
+|Swift 3               |`2.0.x`             |
 |Swift 2.2             |`1.1.2`             |
 
 

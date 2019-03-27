@@ -1,22 +1,27 @@
 PODS:
-  - EasyToast (2.0.2)
-  - Nimble (7.0.3)
-  - Quick (1.2.0)
+  - EasyToast (3.0.0)
+  - Nimble (8.0.1)
+  - Quick (2.0.0)
 
 DEPENDENCIES:
   - EasyToast (from `../`)
   - Nimble
   - Quick
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
+
 EXTERNAL SOURCES:
   EasyToast:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  EasyToast: d37b9ea58aec4376871b5b984b959b80faa2777b
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  EasyToast: 4d121d7d3b836bd047876fd619a306ccc1c8bbe0
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
 
 PODFILE CHECKSUM: 7ec0d37cf96599a2fb1dcaf5584a30977985f5b2
 
-COCOAPODS: 1.4.0.beta.1
+COCOAPODS: 1.5.3
