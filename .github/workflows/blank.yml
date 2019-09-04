@@ -3,7 +3,7 @@ on: [pull_request]
 
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     name: "Run Danger"
     steps:
       - uses: actions/checkout@v1
