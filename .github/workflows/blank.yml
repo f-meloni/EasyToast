@@ -1,11 +1,10 @@
-name: CI
-
 name: "Danger Swift"
 on: [pull_request]
 
 jobs:
   build:
     runs-on: macOS-latest
+    name: "Run Danger"
     steps:
     - uses: actions/checkout@v1
     - name: Danger
