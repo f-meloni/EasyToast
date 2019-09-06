@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: danger/swift@2.0.2
+        uses: danger/swift@remove_swiftlint_from_actions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
