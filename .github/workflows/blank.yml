@@ -11,4 +11,4 @@ jobs:
         uses: danger/swift@remove_swiftlint_from_actions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          INPUT_INSTALL_SWIFTLINT: true
+          INPUT_INSTALL_SWIFTLINT: "true"
