@@ -8,8 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: danger/swift@remove_swiftlint_from_actions
-        with:
-          install_swiftlint: "true"
+        uses: f-meloni/danger-swift-swiftlint-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
