@@ -5,4 +5,4 @@ if danger.git.createdFiles.count + danger.git.modifiedFiles.count - danger.git.d
     warn("Big PR, try to keep changes smaller if you can")
 }
 
-danger.git.modifiedFiles.forEach { fail(message: "TEST", file: $0, line: 1) }
+danger.git.modifiedFiles.forEach { fail(message: "TEST", file: $0, line: 8) }
