@@ -31,7 +31,7 @@ Swift Android-like toast with simple interface, using a toast queue to handle mu
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'EasyToast/Classes/**/*'
-  s.xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  s.xcconfig = { 'SWIFT_VERSION' => '5.0' }
   
   # s.resource_bundles = {
   #   'EasyToast' => ['EasyToast/Assets/*.png']
